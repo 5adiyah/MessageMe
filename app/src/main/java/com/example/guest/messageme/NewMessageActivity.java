@@ -19,6 +19,7 @@ import butterknife.ButterKnife;
 
 public class NewMessageActivity extends AppCompatActivity implements View.OnClickListener{
     private DatabaseReference mMessageReference;
+    private ValueEventListener mMessageReferenceListener;
 
     @Bind(R.id.sendMessage) ImageView mSendMessage;
     @Bind(R.id.messageText) EditText mMessageText;
@@ -33,7 +34,7 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
                 .getReference()
                 .child(Constants.FIREBASE_CHILD_MESSAGE);
 
-        mMessageReference.addValueEventListener(new ValueEventListener() {
+        mMessageReferenceListener = mMessageReference.addValueEventListener(new ValueEventListener() {
             @Override //called whenever data at the specified node changes.
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot messageSnapshot : dataSnapshot.getChildren()){
@@ -67,6 +68,12 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
 
     public void saveMessageToFirebase(String location){
         mMessageReference.push().setValue(location);
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        mMessageReference.removeEventListener(mMessageReferenceListener);
     }
 }
 
