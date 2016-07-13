@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.guest.messageme.NewMessageActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/background"
+        android:src="@drawable/background2"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        android:background="@color/background_floating_material_light"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:background="@color/dark"
+            >
+
+            <ImageView
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/logo"
+                android:src="@drawable/logo"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="18dp"
+            android:text="New Message"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/userText"
+            android:textColorHint="@color/dark"
+            android:textSize="12sp"
+            android:backgroundTint="@color/dark"
+            android:hint="USER"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/messageText"
+            android:textColorHint="@color/dark"
+            android:textSize="12sp"
+            android:backgroundTint="@color/dark"
+            android:hint="MESSAGE"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/sendMessage"
+            android:src="@drawable/send"/>
+
+
+    </LinearLayout>
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_marginLeft="80dp"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<EditText-->
+    <!--android:layout_width="250dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:id="@+id/userName"-->
+    <!--android:textColorHint="@color/white"-->
+    <!--android:textSize="11sp"-->
+    <!--android:backgroundTint="@color/white"-->
+    <!--android:hint="USERNAME"/>-->
+
+    <!--<EditText-->
+    <!--android:layout_width="250dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:id="@+id/passWord"-->
+    <!--android:textColorHint="@color/white"-->
+    <!--android:textSize="11sp"-->
+    <!--android:backgroundTint="@color/white"-->
+    <!--android:hint="PASSWORD"/>-->
+
+    <!--<Button-->
+    <!--android:layout_width="250dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginTop="30dp"-->
+    <!--android:background="@color/highlight"-->
+    <!--android:text="LOGIN"/>-->
+
+    <!--</LinearLayout>-->
+    <!--</RelativeLayout>-->
+</RelativeLayout>
