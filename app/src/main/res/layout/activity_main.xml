@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:id="@+id/background"
-        android:src="@drawable/background"
+        android:src="@drawable/background3"
         android:layout_alignParentTop="true"/>
 
     <LinearLayout
@@ -66,34 +66,15 @@
             android:layout_marginLeft="80dp"
             android:orientation="vertical">
 
-            <EditText
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/emailEditText"
-                android:textColorHint="@color/white"
-                android:textSize="11sp"
-                android:backgroundTint="@color/white"
-                android:hint="EMAIL"/>
 
-            <EditText
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:id="@+id/passwordEditText"
-                android:textColorHint="@color/white"
-                android:textSize="11sp"
-                android:backgroundTint="@color/white"
-                android:hint="PASSWORD"/>
 
-            <Button
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:background="@color/highlight"
-                android:text="LOGIN"/>
+            <!--<Button-->
+                <!--android:layout_width="250dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--android:background="@color/highlight"-->
+                <!--android:text="LOGIN"/>-->
 
         </LinearLayout>
     </RelativeLayout>
