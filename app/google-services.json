@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "502365440437",
+    "firebase_url": "https://messageme-c6f2c.firebaseio.com",
+    "project_id": "messageme-c6f2c",
+    "storage_bucket": "messageme-c6f2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502365440437:android:ed537bc1e8667c5f",
+        "android_client_info": {
+          "package_name": "com.example.guest.messageme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502365440437-nn0c971nlr0rv2276u307o5tpesaj639.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guest.messageme",
+            "certificate_hash": "1C119F4992B05027C0601C288308A379B787BDB0"
+          }
+        },
+        {
+          "client_id": "502365440437-k2ciuc859ve2fogc7q21bvuqemtde8nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHPcxkImYubJDIPKVyMoVXLhXPNhQrcjk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502365440437-k2ciuc859ve2fogc7q21bvuqemtde8nh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
