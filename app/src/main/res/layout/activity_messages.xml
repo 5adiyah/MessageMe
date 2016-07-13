@@ -47,58 +47,13 @@
 
         </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
-            android:text="Test"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerView"/>
 
 
 
     </LinearLayout>
 
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginLeft="80dp"-->
-            <!--android:orientation="vertical">-->
-
-            <!--<EditText-->
-                <!--android:layout_width="250dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:id="@+id/userName"-->
-                <!--android:textColorHint="@color/white"-->
-                <!--android:textSize="11sp"-->
-                <!--android:backgroundTint="@color/white"-->
-                <!--android:hint="USERNAME"/>-->
-
-            <!--<EditText-->
-                <!--android:layout_width="250dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:layout_marginTop="20dp"-->
-                <!--android:id="@+id/passWord"-->
-                <!--android:textColorHint="@color/white"-->
-                <!--android:textSize="11sp"-->
-                <!--android:backgroundTint="@color/white"-->
-                <!--android:hint="PASSWORD"/>-->
-
-            <!--<Button-->
-                <!--android:layout_width="250dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:layout_marginTop="30dp"-->
-                <!--android:background="@color/highlight"-->
-                <!--android:text="LOGIN"/>-->
-
-        <!--</LinearLayout>-->
-    <!--</RelativeLayout>-->
 </RelativeLayout>

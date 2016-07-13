@@ -1,5 +1,6 @@
 package com.example.guest.messageme;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,19 +37,20 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
                 .child(Constants.FIREBASE_CHILD_MESSAGE);
 
         mMessageReferenceListener = mMessageReference.addValueEventListener(new ValueEventListener() {
-            @Override //called whenever data at the specified node changes.
+            @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot messageSnapshot : dataSnapshot.getChildren()){
                     String message = messageSnapshot.getValue().toString();
-                    Log.d("Message", message);
+                    Log.d("Message", message); //Right now I'm just logging, I need to write it to my app tho
                 }
             }
 
-            @Override //called if the listener is unsuccessful for any reason.
+            @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
+
 
         ButterKnife.bind(this);
         mSendMessage.setOnClickListener(this);
@@ -66,8 +69,9 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public void saveMessageToFirebase(String location){
-        mMessageReference.push().setValue(location);
+    public void saveMessageToFirebase(String messageText){
+        Message message = new Message(messageText);
+        mMessageReference.push().setValue(message);
     }
 
     @Override
@@ -77,4 +81,7 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
     }
 }
 
+
+//Type in message, click the add button, that starts the saveMessageToFirebase method which saves it and then takes you to back to MessagesAcvity
+//Then you should be able to see the message on MessagesActivity
 

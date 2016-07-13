@@ -30,3 +30,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+
+//Start here, click on messages button and that takes you to Messages Activity

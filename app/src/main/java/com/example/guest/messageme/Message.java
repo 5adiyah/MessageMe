@@ -1,8 +1,8 @@
 package com.example.guest.messageme;
 
-/**
- * Created by Guest on 7/13/16.
- */
+import org.parceler.Parcel;
+
+@Parcel
 public class Message {
     String message;
 
@@ -15,4 +15,6 @@ public class Message {
     public String getMessage(){
         return message;
     }
+
+    public void setMessage(String message){this.message = message;}
 }
