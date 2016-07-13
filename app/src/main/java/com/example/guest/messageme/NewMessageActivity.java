@@ -47,7 +47,7 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
     }
 
     public void saveMessageToFirebase(String location){
-        mMessageReference.setValue(location);
+        mMessageReference.push().setValue(location);
     }
 }
 
