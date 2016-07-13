@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.guest.messageme.CreateAccountActivity">
+
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:scaleType="centerCrop"
+    android:id="@+id/background"
+    android:src="@drawable/background"
+    android:layout_alignParentTop="true"/>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/nameEditText"
+            android:textColorHint="@color/white"
+            android:textSize="11sp"
+            android:backgroundTint="@color/white"
+            android:inputType="textEmailAddress"
+            android:hint="Name"/>
+
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:id="@+id/emailEditText"
+            android:textColorHint="@color/white"
+            android:textSize="11sp"
+            android:backgroundTint="@color/white"
+            android:hint="Email"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:id="@+id/passwordEditText"
+            android:textColorHint="@color/white"
+            android:textSize="11sp"
+            android:backgroundTint="@color/white"
+            android:inputType="textPassword"
+            android:hint="Password"/>
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:id="@+id/confirmPasswordEditText"
+            android:textColorHint="@color/white"
+            android:textSize="11sp"
+            android:backgroundTint="@color/white"
+            android:inputType="textPassword"
+            android:hint="Confirm Password"/>
+
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/createUserButton"
+            android:layout_marginTop="30dp"
+            android:background="@color/highlight"
+            android:text="Sign up"/>
+
+    </LinearLayout>
+</RelativeLayout>
+</RelativeLayout>
