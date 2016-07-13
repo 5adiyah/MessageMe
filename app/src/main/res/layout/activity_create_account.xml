@@ -83,6 +83,15 @@
             android:background="@color/highlight"
             android:text="Sign up"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account? Log in here!"
+            android:id="@+id/loginTextView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/white"/>
+
     </LinearLayout>
 </RelativeLayout>
 </RelativeLayout>
