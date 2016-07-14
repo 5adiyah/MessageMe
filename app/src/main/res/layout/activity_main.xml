@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginBottom="30dp"
-            android:id="@+id/message"
+            android:id="@+id/newMessage"
             android:src="@drawable/email"
             android:layout_centerHorizontal="true"/>
 
@@ -63,17 +63,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="80dp"
             android:orientation="vertical">
 
+            <RelativeLayout
+                android:layout_width="310dp"
+                android:layout_height="625dp"
+                android:layout_margin="10dp"
+                android:alpha="0.3"
+                android:background="@color/white"></RelativeLayout>
 
 
-            <!--<Button-->
-                <!--android:layout_width="250dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:layout_marginTop="30dp"-->
-                <!--android:background="@color/highlight"-->
-                <!--android:text="LOGIN"/>-->
 
         </LinearLayout>
     </RelativeLayout>

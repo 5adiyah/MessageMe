@@ -7,4 +7,5 @@
     <color name="highlight">#c9e8b1</color>
     <color name="dark">#30204D</color>
     <color name="purple">#312635</color>
+    <color name="test">#77ffffff</color>
 </resources>

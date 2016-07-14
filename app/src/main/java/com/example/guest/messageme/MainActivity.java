@@ -11,7 +11,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    @Bind(R.id.message) ImageView mMessage;
+    @Bind(R.id.newMessage) ImageView mNewMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mMessage.setOnClickListener(this);
+        mNewMessage.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v){
-        if(v==mMessage){
-            Intent intent = new Intent(MainActivity.this, MessagesActivity.class);
+        if(v==mNewMessage){
+            Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
             startActivity(intent);
         }
     }
