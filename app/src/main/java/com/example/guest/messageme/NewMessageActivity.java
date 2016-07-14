@@ -24,6 +24,7 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
     private ValueEventListener mMessageReferenceListener;
 
     @Bind(R.id.sendMessage) ImageView mSendMessage;
+    @Bind(R.id.logo) ImageView mLogo;
     @Bind(R.id.messageText) EditText mMessageText;
 
     @Override
@@ -55,6 +56,7 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
         ButterKnife.bind(this);
         mSendMessage.setOnClickListener(this);
         mMessageText.setOnClickListener(this);
+        mLogo.setOnClickListener(this);
     }
 
     @Override
@@ -63,8 +65,11 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
             String message = mMessageText.getText().toString();
             saveMessageToFirebase(message);
 
-            Intent intent = new Intent(NewMessageActivity.this, MessagesActivity.class);
+            Intent intent = new Intent(NewMessageActivity.this, MainActivity.class);
             intent.putExtra("message", message);
+            startActivity(intent);
+        } else if(v==mLogo){
+            Intent intent = new Intent(NewMessageActivity.this, MainActivity.class);
             startActivity(intent);
         }
     }

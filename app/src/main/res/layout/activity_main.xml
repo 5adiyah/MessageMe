@@ -71,7 +71,14 @@
                 android:layout_height="625dp"
                 android:layout_margin="10dp"
                 android:alpha="0.3"
-                android:background="@color/white"></RelativeLayout>
+                android:background="@color/white">
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/recyclerView"/>
+
+            </RelativeLayout>
 
 
 

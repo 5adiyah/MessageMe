@@ -48,7 +48,7 @@ public class FirebaseViewHolder extends RecyclerView.ViewHolder implements View.
 
                 int itemPosition = getLayoutPosition();
 
-                Intent intent = new Intent(mContext, MessagesActivity.class);
+                Intent intent = new Intent(mContext, MainActivity.class);
                 intent.putExtra("position", itemPosition + "");
                 intent.putExtra("posts", Parcels.wrap(messages));
 
