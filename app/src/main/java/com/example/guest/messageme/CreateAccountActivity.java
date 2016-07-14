@@ -96,6 +96,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                         if(task.isSuccessful()){
                             Log.d(TAG, "Authentication successful");
                             createFirebaseUserProfile(task.getResult().getUser());
+
                         }else {
                             Toast.makeText(CreateAccountActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                         }
@@ -131,6 +132,8 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                         }
                     }
                 });
+
+        //TODO ADD USERS TO DATABASE WITH USER MODEL
     }
 
     @Override

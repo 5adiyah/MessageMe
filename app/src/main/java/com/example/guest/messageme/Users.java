@@ -9,7 +9,7 @@ import java.util.List;
 public class Users {
     String name;
     String email;
-    List<Message> messages = new ArrayList<>();
+//    List<Message> messages = new ArrayList<>();
     private String pushId;
 
     public Users(){}
