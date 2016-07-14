@@ -2,6 +2,7 @@ package com.example.guest.messageme;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -62,22 +65,37 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v){
         if(v==mSendMessage){
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String userId = user.getUid();
+            DatabaseReference messageRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference()
+                    .child(userId);
+
+            Log.d("User Id: ----", userId);
+
             String message = mMessageText.getText().toString();
-            saveMessageToFirebase(message);
+            String sender = userId;
+            String recipient = "dunno yet";
+            saveMessageToFirebase(message, sender, recipient);
 
             Intent intent = new Intent(NewMessageActivity.this, MainActivity.class);
             intent.putExtra("message", message);
             startActivity(intent);
+
+
         } else if(v==mLogo){
             Intent intent = new Intent(NewMessageActivity.this, MainActivity.class);
             startActivity(intent);
         }
     }
 
-    public void saveMessageToFirebase(String messageText){
-        Message message = new Message(messageText);
+    public void saveMessageToFirebase(String messageText, String sender, String recipient){
+        Message message = new Message(messageText, sender, recipient);
+        //message.setPushId(sender); //TODO Figure out if this is the correct way of doing this
         mMessageReference.push().setValue(message);
     }
+
 
     @Override
     protected void onDestroy(){
