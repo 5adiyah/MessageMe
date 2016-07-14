@@ -10,14 +10,14 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:id="@+id/background"
-        android:src="@drawable/background3"
+        android:src="@drawable/background4"
         android:layout_alignParentTop="true"/>
 
     <LinearLayout
         android:layout_width="80dp"
         android:layout_height="match_parent"
         android:padding="15dp"
-        android:background="@color/background_floating_material_light"
+        android:background="@color/purple"
         android:orientation="vertical">
 
         <ImageView
@@ -63,7 +63,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="80dp"
             android:orientation="vertical">
 
 

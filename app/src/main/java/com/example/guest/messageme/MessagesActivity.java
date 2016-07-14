@@ -36,6 +36,7 @@ public class MessagesActivity extends AppCompatActivity implements View.OnClickL
     ArrayList<Message> array = new ArrayList<>();
 
     @Bind(R.id.newMessage) ImageView mNewMessage;
+    @Bind(R.id.logo) ImageView mLogo;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
     @Override
@@ -63,12 +64,16 @@ public class MessagesActivity extends AppCompatActivity implements View.OnClickL
 
 
         mNewMessage.setOnClickListener(this);
+        mLogo.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v){
         if(v==mNewMessage){
             Intent intent = new Intent(MessagesActivity.this, NewMessageActivity.class);
+            startActivity(intent);
+        } else if(v==mLogo){
+            Intent intent = new Intent(MessagesActivity.this, MainActivity.class);
             startActivity(intent);
         }
     }
