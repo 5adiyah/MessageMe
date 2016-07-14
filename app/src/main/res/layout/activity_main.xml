@@ -67,11 +67,11 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="310dp"
-                android:layout_height="625dp"
-                android:layout_margin="10dp"
-                android:alpha="0.3"
-                android:background="@color/white">
+                android:layout_width="300dp"
+                android:layout_height="615dp"
+                android:layout_margin="15dp"
+                android:alpha="0.5"
+                android:background="@color/test2">
 
                 <android.support.v7.widget.RecyclerView
                     android:layout_width="match_parent"

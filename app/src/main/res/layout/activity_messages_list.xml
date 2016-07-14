@@ -11,6 +11,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:id="@+id/messageTextView"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:text="Test"/>
 

@@ -4,8 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color>
+    <color name="black">#000</color>
     <color name="highlight">#c9e8b1</color>
     <color name="dark">#30204D</color>
-    <color name="purple">#312635</color>
-    <color name="test">#77ffffff</color>
+    <color name="purple">#261833</color>
+    <color name="test">#252728</color>
+    <color name="test2">#1f1b21</color>
 </resources>
