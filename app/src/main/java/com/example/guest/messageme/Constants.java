@@ -5,4 +5,5 @@ package com.example.guest.messageme;
  */
 public class Constants {
     public static final String FIREBASE_CHILD_MESSAGE = "messages";
+    public static final String FIREBASE_CHILD_USER = "users";
 }

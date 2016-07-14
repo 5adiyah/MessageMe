@@ -14,10 +14,9 @@ public class Users {
 
     public Users(){}
 
-    public Users(String name, String email, ArrayList<Message> messages){
+    public Users(String name, String email){
         this.name = name;
         this.email = email;
-        this.messages = messages;
     }
 
     public String getName() {
@@ -26,10 +25,6 @@ public class Users {
 
     public String getEmail() {
         return email;
-    }
-
-    public List<Message> getMessages(){
-        return messages;
     }
 
     public String getPushId(){

@@ -19,6 +19,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -134,6 +136,17 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                 });
 
         //TODO ADD USERS TO DATABASE WITH USER MODEL
+        FirebaseUser thisUser = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = user.getUid();
+        DatabaseReference userReference = FirebaseDatabase
+                .getInstance()
+                .getReference("users");
+
+        String name = mNameEditText.getText().toString();
+        String email = mEmailEditText.getText().toString();
+        Users newUser = new Users(name, email);
+        userReference.push().setValue(newUser);
+
     }
 
     @Override
