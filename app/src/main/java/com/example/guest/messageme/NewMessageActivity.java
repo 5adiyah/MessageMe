@@ -88,5 +88,5 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
 
 
 //Type in message, click the add button, that starts the saveMessageToFirebase method which saves it and then takes you to back to MessagesAcvity
-//Then you should be able to see the message on MessagesActivity
+//Then you should be able to see the message on Messages activity
 
