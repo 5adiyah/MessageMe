@@ -11,6 +11,7 @@ import android.view.animation.Interpolator;
 import android.widget.ImageView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayList<Message> array = new ArrayList<>();
 
     @Bind(R.id.newMessage) ImageView mNewMessage;
+    @Bind(R.id.logout) ImageView mLogout;
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
     @Override
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Query q = ref.orderByKey();
 
         mNewMessage.setOnClickListener(this);
+        mLogout.setOnClickListener(this);
     }
 
     @Override
@@ -63,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v==mNewMessage){
             Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
             startActivity(intent);
+        } else if(v==mLogout){
+            logout();
         }
     }
 
@@ -70,6 +75,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onDestroy(){
         super.onDestroy();
         mAdapter.cleanup();
+    }
+
+    private void logout(){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }
 
