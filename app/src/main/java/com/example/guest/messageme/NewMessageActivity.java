@@ -17,6 +17,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import butterknife.Bind;
@@ -30,6 +31,7 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
     @Bind(R.id.logo) ImageView mLogo;
     @Bind(R.id.messageText) EditText mMessageText;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,16 +39,33 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
 
         mMessageReference = FirebaseDatabase
                 .getInstance()
-                .getReference()
-                .child(Constants.FIREBASE_CHILD_MESSAGE);
+                .getReference();
 
-        mMessageReferenceListener = mMessageReference.addValueEventListener(new ValueEventListener() {
+        Query q = mMessageReference.orderByKey();
+
+        q.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot messageSnapshot : dataSnapshot.getChildren()){
-                    String message = messageSnapshot.getValue().toString();
-                    Log.d("Message", message); //Right now I'm just logging, I need to write it to my app tho
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                    Message newMessage = ds.getValue(Message.class);
+                    String userKey = ds.getKey();
+                    Log.d("ksjhgjdfhg", userKey);
                 }
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
             }
 
             @Override
@@ -54,6 +73,24 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
 
             }
         });
+
+
+
+
+//                addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for(DataSnapshot messageSnapshot : dataSnapshot.getChildren()){
+//                    String message = messageSnapshot.getValue().toString();
+//                    Log.d("Message", message); //Right now I'm just logging, I need to write it to my app tho
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
 
 
         ButterKnife.bind(this);
@@ -69,18 +106,20 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
             String userId = user.getUid();
             DatabaseReference messageRef = FirebaseDatabase
                     .getInstance()
-                    .getReference()
+                    .getReference("messages")
                     .child(userId);
 
-            Log.d("User Id: ----", userId);
 
-            String message = mMessageText.getText().toString();
+            String messageText = mMessageText.getText().toString();
             String sender = userId;
             String recipient = "dunno yet";
-            saveMessageToFirebase(message, sender, recipient);
+
+            Message message = new Message(messageText, sender, recipient);
+            messageRef.child("messages");
+            messageRef.push().setValue(message);
 
             Intent intent = new Intent(NewMessageActivity.this, MainActivity.class);
-            intent.putExtra("message", message);
+            intent.putExtra("message", messageText);
             startActivity(intent);
 
 
@@ -90,11 +129,6 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public void saveMessageToFirebase(String messageText, String sender, String recipient){
-        Message message = new Message(messageText, sender, recipient);
-        //message.setPushId(sender); //TODO Figure out if this is the correct way of doing this
-        mMessageReference.push().setValue(message);
-    }
 
 
     @Override

@@ -86,6 +86,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
         mAuthProgressDialog.show();
 
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

@@ -6,10 +6,9 @@ import java.util.Date;
 
 @Parcel
 public class Message {
-    private String sender;
-    private String recipient;
-    private String message;
-    private Date date;
+    String sender;
+    String recipient;
+    String message;
     private String pushId;
 
     public Message(){}
@@ -18,7 +17,6 @@ public class Message {
         this.message = message;
         this.sender = sender;
         this.recipient = recipient;
-        this.date = new Date();
     }
 
     public String getMessage(){
@@ -33,9 +31,6 @@ public class Message {
         return recipient;
     }
 
-    public Date getDate(){
-        return date;
-    }
 
     public String getPushId(){
         return pushId;
