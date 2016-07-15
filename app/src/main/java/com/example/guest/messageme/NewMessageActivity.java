@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,6 +28,7 @@ import butterknife.ButterKnife;
 public class NewMessageActivity extends AppCompatActivity implements View.OnClickListener{
     private DatabaseReference mMessageReference;
     private ValueEventListener mMessageReferenceListener;
+
 
     @Bind(R.id.sendMessage) ImageView mSendMessage;
     @Bind(R.id.logo) ImageView mLogo;
@@ -72,25 +75,8 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
-
-
-
-
-//                addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for(DataSnapshot messageSnapshot : dataSnapshot.getChildren()){
-//                    String message = messageSnapshot.getValue().toString();
-//                    Log.d("Message", message); //Right now I'm just logging, I need to write it to my app tho
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
 
 
         ButterKnife.bind(this);
