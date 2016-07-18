@@ -42,41 +42,57 @@ public class NewMessageActivity extends AppCompatActivity implements View.OnClic
 
         mMessageReference = FirebaseDatabase
                 .getInstance()
-                .getReference();
+                .getReference("users");
 
         Query q = mMessageReference.orderByKey();
 
-        q.addChildEventListener(new ChildEventListener() {
+        q.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
-                    Message newMessage = ds.getValue(Message.class);
-                    String userKey = ds.getKey();
-                    Log.d("ksjhgjdfhg", userKey);
+                    Users user = ds.getValue(Users.class);
+                    Log.d("Name", user.getName());
                 }
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
-
         });
+
+//        q.addChildEventListener(new ChildEventListener() {
+//            @Override
+//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+////                for(DataSnapshot ds : dataSnapshot.getChildren()){
+//                    Users user  = dataSnapshot.getValue(Users.class);
+//                Log.d("Name", user.getName());
+////                    String userKey = ds.getKey();
+////                    Log.d("DS.GETKEY(): ----", userKey);
+//                //}
+//            }
+//
+//            @Override
+//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onChildRemoved(DataSnapshot dataSnapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//
+//        });
 
 
         ButterKnife.bind(this);

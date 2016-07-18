@@ -144,7 +144,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
         String name = mNameEditText.getText().toString();
         String email = mEmailEditText.getText().toString();
-        Users newUser = new Users(name, email);
+        Users newUser = new Users(name, email, userId);
         userReference.push().setValue(newUser);
 
     }
